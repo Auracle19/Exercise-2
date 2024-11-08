@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Picture/pic2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: url('Picture/card-background.jpg') no-repeat center center;
+    background-size: cover;
+    border: 5px solid #c0c0c0;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    border-radius: 20px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 70%, #c0c0c0 75%, transparent 80%);
+    background-size: 30px 30px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-img-side {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid #c0c0c0;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-quote {
+    font-style: italic;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.overlay-content p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.btn-custom {
+    background: linear-gradient(145deg, #c0c0c0, #e0e0e0);
+    border: 2px solid #c0c0c0;
+    color: #333;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    border-color: #888;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-custom:focus, .btn-custom:active {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(21, 180, 0, 0.5);
+}
+
+.global-comments {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 300px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.global-comments textarea {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+.global-comment-list {
+    margin-top: 15px;
+}
+
+.global-comment-list .global-comment {
+    background-color: #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
